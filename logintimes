@@ -1,0 +1,8 @@
+
+$details2 = Get-Date;
+
+$time = $details2.TimeOfDay.TotalSeconds - $details1.LastLogon.TimeOfDay.TotalSeconds;
+
+$output = "$details2 - $env:computername - $env:username - $time"
+
+$output | Out-File -Append C:\Users\$env:username\Desktop\LogonTimes_$env:computername.txt
